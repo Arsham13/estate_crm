@@ -1,27 +1,27 @@
-# 🏠 املاک CRM — مدیریت هوشمند املاک
+# 🏠 Real Estate CRM — Smart Property Management
 
-یک CRM حرفه‌ای برای مشاوران املاک، ساخته‌شده با **React + Vite + JavaScript خالص** (بدون TypeScript، بدون Next.js).
+A professional CRM for real estate agents, built with **React + Vite + Pure JavaScript** (no TypeScript, no Next.js).
 
-## ✨ ویژگی‌ها
+## ✨ Features
 
-- **احراز هویت چندنقشی** — مدیر (admin)، مشاور (advisor)، دستیار (assistant) با کنترل دسترسی صفحه‌به‌صفحه
-- **داشبورد** با کارت‌های آماری، نمودارهای درآمد، منابع مشتریان، قیف فروش و فعالیت‌های اخیر
-- **مدیریت مشتریان** — CRUD کامل، فیلتر، جستجو، Export CSV، جدول قابل مرتب‌سازی
-- **مدیریت ملک‌ها** — CRUD کامل، نمایش لیست/گرید، فیلترهای پیشرفته
-- **قراردادها، وظایف، بازدیدها** — جداول sortable با CRUD کامل
-- **پایپ‌لاین فروش** — کانبان با Drag & Drop (@hello-pangea/dnd)
-- **تقویم** — نمایش ماهانه/هفتگی/روزانه رویدادها (react-big-calendar)
-- **گزارش مالی** — نمودار درآمد، مقایسه مشاوران، جدول کمیسیون
-- **تنظیمات** — مدیریت کاربران و لاگ فعالیت‌ها
-- **Dark Mode** کامل در همه صفحات
-- **RTL** و فونت فارسی **Vazirmatn**
-- **Fully Responsive** — سایدبار در موبایل به bottom navigation تبدیل می‌شود
-- **انیمیشن‌های ظریف** — انیمیشن ورود المنت‌ها هنگام اسکرول، افکت active روی کلیک‌ها
+- **Multi-role Authentication** — Admin, Advisor, Assistant with page-level access control
+- **Dashboard** with stat cards, revenue charts, customer sources, sales funnel, and recent activities
+- **Customer Management** — Full CRUD, filtering, search, CSV export, sortable table
+- **Property Management** — Full CRUD, list/grid view, advanced filters
+- **Contracts, Tasks, Visits** — Sortable tables with full CRUD
+- **Sales Pipeline** — Kanban board with Drag & Drop (@hello-pangea/dnd)
+- **Calendar** — Monthly/weekly/daily event views (react-big-calendar)
+- **Financial Report** — Revenue chart, advisor comparison, commission table
+- **Settings** — User management and activity logs
+- **Full Dark Mode** across all pages
+- **RTL** layout with **Vazirmatn** Persian font
+- **Fully Responsive** — sidebar converts to bottom navigation on mobile
+- **Subtle Animations** — scroll-triggered element entry animations, active click effects
 
-## 🛠️ تکنولوژی‌ها
+## 🛠️ Tech Stack
 
-| دسته | تکنولوژی |
-|------|----------|
+| Category | Technology |
+|----------|------------|
 | Framework | React 18 |
 | Build Tool | Vite 5 |
 | Styling | Tailwind CSS 3 |
@@ -33,68 +33,68 @@
 | Backend | JSON Server (mock API) |
 | Calendar | react-big-calendar |
 | Drag & Drop | @hello-pangea/dnd |
-| Date | moment-jalaali (تاریخ شمسی) |
+| Date | moment-jalaali (Jalali/Persian calendar) |
 | Notifications | react-hot-toast |
 | Font | Vazirmatn (CDN) |
 
-## 🚀 راه‌اندازی
+## 🚀 Getting Started
 
-### پیش‌نیازها
+### Prerequisites
 - Node.js 18+
-- npm یا yarn
+- npm or yarn
 
-### نصب
+### Installation
 
 ```bash
-# استخراج فایل ZIP
+# Extract the ZIP file
 cd real-estate-crm
 
-# نصب پکیج‌ها
+# Install packages
 npm install
 ```
 
-### اجرا
+### Run
 
-برای اجرای همزمان frontend و mock API backend:
+To run both the frontend and mock API backend simultaneously:
 
 ```bash
 npm start
 ```
 
-این دستور همزمان دو سرویس را اجرا می‌کند:
-- **JSON Server** روی پورت `3001` (mock API)
-- **Vite dev server** روی پورت `5173` (frontend)
+This command runs two services at once:
+- **JSON Server** on port `3001` (mock API)
+- **Vite dev server** on port `5173` (frontend)
 
-سپس آدرس `http://localhost:5173` را در مرورگر باز کنید.
+Then open `http://localhost:5173` in your browser.
 
-### اجرای جداگانه
+### Running Separately
 
 ```bash
-# ترمینال ۱ — اجرای mock API
+# Terminal 1 — Run mock API
 npm run server
 
-# ترمینال ۲ — اجرای frontend
+# Terminal 2 — Run frontend
 npm run dev
 ```
 
-### Build نهایی
+### Production Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## 👤 حساب‌های نمایشی
+## 👤 Demo Accounts
 
-| نقش | ایمیل | رمز عبور | دسترسی |
+| Role | Email | Password | Access |
 |------|-------|----------|--------|
-| مدیر | `admin@crm.com` | `admin123` | همه صفحات + تنظیمات |
-| مشاور | `advisor@crm.com` | `advisor123` | همه صفحات به‌جز تنظیمات (فقط داده‌های خودش) |
-| دستیار | `assistant@crm.com` | `assistant123` | فقط خواندن (بدون افزودن/ویرایش/حذف) |
+| Admin | `admin@crm.com` | `admin123` | All pages + Settings |
+| Advisor | `advisor@crm.com` | `advisor123` | All pages except Settings (only own data) |
+| Assistant | `assistant@crm.com` | `assistant123` | Read-only (no add/edit/delete) |
 
-روی صفحه لاگین، دکمه‌های میانبر برای پر کردن خودکار هر حساب وجود دارد.
+Shortcut buttons are available on the login page to auto-fill each account.
 
-## 📁 ساختار پوشه‌ها
+## 📁 Folder Structure
 
 ```
 real-estate-crm/
@@ -102,7 +102,7 @@ real-estate-crm/
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   ├── common/        # کامپوننت‌های پایه (Button, Input, Table, Modal, ...)
+│   │   ├── common/        # Base components (Button, Input, Table, Modal, ...)
 │   │   ├── layout/        # Sidebar, Header, MainLayout
 │   │   ├── dashboard/     # StatCard, Charts, ...
 │   │   ├── customers/     # CustomerForm, CustomerProfile
@@ -119,40 +119,40 @@ real-estate-crm/
 │   ├── routes/            # AppRouter, PrivateRoute, RoleRoute
 │   ├── services/          # api, authService, customerService, ...
 │   └── utils/             # constants, formatters, helpers, validators, exportCSV
-├── db.json                # دیتابیس JSON Server (seed data)
+├── db.json                # JSON Server database (seed data)
 ├── index.html
 ├── tailwind.config.js
 ├── vite.config.js
 └── package.json
 ```
 
-## 🎨 سیستم طراحی
+## 🎨 Design System
 
-- **رنگ اصلی**: طلایی `#D4A017`
-- **فونت**: Vazirmatn (فارسی، RTL)
-- **گوشه‌های گرد**: `rounded-xl`
-- **سایه ظریف**: `shadow-sm`
-- **Dark Mode**: از طریق `data-theme="dark"` روی `<html>` و CSS Variables
+- **Primary Color**: Gold `#D4A017`
+- **Font**: Vazirmatn (Persian, RTL)
+- **Border Radius**: `rounded-xl`
+- **Subtle Shadow**: `shadow-sm`
+- **Dark Mode**: Via `data-theme="dark"` on `<html>` and CSS Variables
 
-## ✅ ویژگی‌های UI
+## ✅ UI Features
 
-- **سایدبار Collapsible**: با کلیک روی دکمه-chevron، سایدبار جمع می‌شود و فقط آیکون‌ها نمایش داده می‌شوند (state در localStorage ذخیره می‌شود)
-- **جداول Sortable**: با کلیک روی هدر هر ستون، داده‌ها بر اساس آن ستون مرتب می‌شوند (تبدیل بین صعودی/نزولی)
-- **انیمیشن اسکرول**: المنت‌ها با ورود به viewport به‌آرامی ظاهر می‌شوند (با `IntersectionObserver`)
-- **افکت Active**: روی کلیک همه دکمه‌ها، افکت `scale(0.96)` اعمال می‌شود
-- **cursor-pointer**: روی همه عناصر قابل کلیک
-- **Dark Mode toggle**: در هدر
-- **جستجوی سراسری**: در هدر، همزمان در مشتریان/ملک‌ها/قراردادها
-- **اعلان‌ها**: زنگ با تعداد خوانده‌نشده، dropdown با لیست اعلان‌ها
-- **Toast Notifications**: برای همه عملیات‌های CRUD
+- **Collapsible Sidebar**: Click the chevron button to collapse the sidebar to icon-only mode (state persisted in localStorage)
+- **Sortable Tables**: Click any column header to sort data (toggles ascending/descending)
+- **Scroll Animations**: Elements gracefully appear when entering the viewport (using `IntersectionObserver`)
+- **Active Effect**: All buttons apply a `scale(0.96)` effect on click
+- **cursor-pointer**: Applied to all clickable elements
+- **Dark Mode Toggle**: Located in the header
+- **Global Search**: In the header, searches across customers/properties/contracts simultaneously
+- **Notifications**: Bell icon with unread count, dropdown with notification list
+- **Toast Notifications**: For all CRUD operations
 
-## 📝 نکات
+## 📝 Notes
 
-- داده‌ها در `db.json` ذخیره می‌شوند و با ری‌استارت JSON Server ریست می‌شوند
-- تاریخ‌ها به شمسی نمایش داده می‌شوند (moment-jalaali)
-- اعداد با فرمت فارسی و جداکننده هزارگان نمایش داده می‌شوند
-- Export CSV با پشتیبانی از UTF-8 (با BOM برای اکسل)
+- Data is stored in `db.json` and resets when JSON Server restarts
+- Dates are displayed in Jalali (Persian) calendar format (moment-jalaali)
+- Numbers are formatted with Persian numerals and thousand separators
+- CSV export supports UTF-8 (with BOM for Excel compatibility)
 
-## 📄 لایسنس
+## 📄 License
 
-این پروژه برای اهداف آموزشی و رزومه ساخته شده است. استفاده آزاد.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
