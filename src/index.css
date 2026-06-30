@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Design System — CSS Variables
+   ============================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Design System — CSS Variables
+   ============================================ */
+:root {
+  --color-primary:        #D4A017;
+  --color-primary-hover:  #B8860B;
+  --color-primary-light:  #F0C040;
+  --color-bg:             #FAFAF7;
+  --color-surface:        #FFFFFF;
+  --color-surface-muted:  #F4F4EE;
+  --color-text-primary:   #111827;
+  --color-text-secondary: #6B7280;
+  --color-border:         #E5E7EB;
+  --color-success:        #10B981;
+  --color-error:          #EF4444;
+  --color-warning:        #F97316;
+  --color-info:           #3B82F6;
+
+  /* RGB versions for Tailwind opacity modifiers */
+  --color-bg-rgb:             250 250 247;
+  --color-surface-rgb:        255 255 255;
+  --color-surface-muted-rgb:  244 244 238;
+  --color-text-primary-rgb:   17 24 39;
+  --color-text-secondary-rgb: 107 114 128;
+  --color-border-rgb:         229 231 235;
+}
+
+[data-theme="dark"] {
+  --color-bg:             #111827;
+  --color-surface:        #1F2937;
+  --color-surface-muted:  #283546;
+  --color-text-primary:   #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-border:         #374151;
+  --color-primary-light:  #6B4F0A;
+
+  /* RGB versions for Tailwind opacity modifiers */
+  --color-bg-rgb:             17 24 39;
+  --color-surface-rgb:        31 41 55;
+  --color-surface-muted-rgb:  40 53 70;
+  --color-text-primary-rgb:   249 250 251;
+  --color-text-secondary-rgb: 156 163 175;
+  --color-border-rgb:         55 65 81;
+}
+
+/* ============================================
+   Base styles
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 8px;
+  border: 2px solid var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #4B5563;
+  border-color: var(--color-surface);
+}
+
+/* ============================================
+   Reusable utility classes
+   ============================================ */
+
+/* Active press effect (mouse down / click-hold) */
+.press-effect {
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+}
+.press-effect:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Clickable cursor helper */
+.cursor-pointer { cursor: pointer; }
+
+/* Card surface */
+.surface-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+}
+
+/* ============================================
+   Recharts dark mode text fix
+   ============================================ */
+[data-theme="dark"] .recharts-cartesian-axis-tick text,
+[data-theme="dark"] .recharts-text {
+  fill: #9CA3AF;
+}
+[data-theme="dark"] .recharts-cartesian-grid line {
+  stroke: #374151;
+}
+[data-theme="dark"] .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #1F2937 !important;
+  border-color: #374151 !important;
+}
+
+/* react-big-calendar dark mode */
+[data-theme="dark"] .rbc-calendar,
+[data-theme="dark"] .rbc-event,
+[data-theme="dark"] .rbc-toolbar button {
+  color: #F9FAFB;
+}
+[data-theme="dark"] .rbc-month-view,
+[data-theme="dark"] .rbc-time-view,
+[data-theme="dark"] .rbc-agenda-view,
+[data-theme="dark"] .rbc-header,
+[data-theme="dark"] .rbc-day-bg,
+[data-theme="dark"] .rbc-time-content,
+[data-theme="dark"] .rbc-time-header-content,
+[data-theme="dark"] .rbc-month-row,
+[data-theme="dark"] .rbc-time-header.rbc-overflowing,
+[data-theme="dark"] .rbc-timeslot-group {
+  border-color: #374151 !important;
+}
+[data-theme="dark"] .rbc-off-range-bg {
+  background-color: #1F2937;
+}
+[data-theme="dark"] .rbc-today {
+  background-color: rgba(212, 160, 23, 0.10);
+}
+
+/* Focus rings */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
